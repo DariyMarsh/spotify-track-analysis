@@ -21,7 +21,7 @@ To clean the data, I removed the `Unnamed: 0` column because it was just an unne
 
 In my exploratory data analysis, I compared explicit and non-explicit tracks across several audio features. One important feature was `energy`, which measures how intense or active a track sounds. The box plot comparing energy scores showed that explicit tracks generally had higher energy scores than non-explicit tracks.
 
-![Energy of Explicit vs Non-Explicit Spotify Tracks](images/energy_boxplot.jpeg)
+![Energy of Explicit vs Non-Explicit Spotify Tracks](images/energy_boxplot.png)
 
 I also examined `speechiness`, which measures the presence of spoken words in a track. This feature is relevant because explicit songs may be more common in genres with more lyrical or spoken-word-heavy content, such as rap or hip-hop. In addition, I looked at the proportion of explicit tracks by genre, since genre is likely connected to whether a song is explicit.
 
@@ -49,7 +49,7 @@ For my hypothesis test, I tested whether explicit tracks have higher energy scor
 
 The observed test statistic was **0.0872**, meaning that explicit tracks had an average energy score about 0.0872 higher than non-explicit tracks. The p-value was approximately **0.0**.
 
-![Permutation Test for Difference in Mean Energy](images/hypothesis_test.jpeg)
+![Permutation Test for Difference in Mean Energy](images/hypothesis_test.jpg)
 
 Since the p-value is less than 0.05, I reject the null hypothesis. This means there is statistically significant evidence that explicit tracks have higher energy scores on average than non-explicit tracks.
 
@@ -85,7 +85,8 @@ I used logistic regression again, but tuned the regularization strength `C` and 
 
 The final model achieved an accuracy of **0.772** and an F1-score of **0.388** for the explicit class. Compared to the baseline model, which had an accuracy of 0.914 and an F1-score of 0.112, the final model had lower overall accuracy but much better performance on the explicit class.
 
-![Baseline Model vs Final Model Performance](images/model_comparison.jpeg)
+
+![Baseline Model vs Final Model Performance](images/model_comparision.png)
 
 The main improvement was recall for explicit tracks. In the baseline model, the recall for explicit tracks was only 0.06, meaning the model missed most explicit songs. In the final model, recall for explicit tracks increased to **0.81**, meaning the model correctly identified most of the explicit tracks in the test set. The confusion matrix showed that the final model correctly predicted 1,325 explicit tracks and missed only 315 explicit tracks.
 
@@ -105,7 +106,8 @@ I used recall for the explicit class as my evaluation metric. Recall measures th
 
 The final model had similar recall for explicit tracks across the two popularity groups. The recall was **0.805** for high-popularity tracks and **0.812** for low-popularity tracks. The observed absolute difference in recall was **0.0069**, and the p-value was **0.743**.
 
-![Fairness Analysis: Difference in Explicit Recall by Popularity Group](images/Fairness_analysis.jpeg)
+
+![Fairness Analysis: Difference in Explicit Recall by Popularity Group](images/Fairness_analysis.png)
 
 Since the p-value is greater than 0.05, I fail to reject the null hypothesis. This means there is not statistically significant evidence that the final model has different explicit-track recall for high-popularity and low-popularity songs.
 

@@ -1,6 +1,7 @@
 # What Makes a Spotify Track Explicit?
 
-By Ruslan Marshaev
+By Dariy Marshaev
+
 
 ## Introduction
 
